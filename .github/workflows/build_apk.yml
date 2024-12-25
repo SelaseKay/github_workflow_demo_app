@@ -1,0 +1,26 @@
+name: Github Workflow Demo
+
+on:
+  pull_request:
+    branches:
+      [main]
+
+jobs:
+  build_apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Simulated Merge
+        uses: actions/checkout@v4
+
+      - name: Setup flutter
+        uses: ubosito/flutter-action@v2
+        with: 
+          flutter-version: 3.24.0
+        
+      - name: Run build build_apk
+        run: flutter build apk
+
+
+
+  
+
